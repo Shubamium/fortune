@@ -1,0 +1,188 @@
+:root {
+  --gold: #ffd172;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  // overflow-x: hidden;
+  // position: relative;
+  position: relative;
+  overflow-x: clip;
+}
+
+body {
+  font-family: var(--fontA);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  // &::before {
+  //   content: "";
+  //   position: fixed;
+  //   top: 0%;
+  //   top: 0%;
+  //   left: 0%;
+  //   width: 100%;
+  //   height: 100%;
+  //   // Dark
+  //   background: url("/b/clop.png"), radial-gradient(#865728, #24170a);
+  //   // light
+  //   // background: url("/b/clop.png"), radial-gradient(#ffd3a7, #cd8d4d);
+  //   background-blend-mode: multiply, normal;
+  //   background-size: 70%, 100%;
+  //   z-index: -100;
+  //   animation: bganim1 125s infinite linear;
+  //   @keyframes bganim1 {
+  //     from {
+  //       background-position:
+  //         0px 0px,
+  //         0px;
+  //     }
+  //     to {
+  //       background-position:
+  //         4000px 4000px,
+  //         0px;
+  //     }
+  //   }
+  // }
+  background: #100e0c;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fontM);
+}
+main {
+  min-height: 300vh;
+}
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+button {
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: black;
+}
+main {
+  // min-height: 8500px;
+}
+
+.btn {
+  cursor: pointer;
+  transition: all 200ms ease;
+  display: block;
+  font-family: var(--fontA);
+  &:hover {
+    scale: 1.05;
+  }
+  &:active {
+    scale: 0.95;
+  }
+}
+
+.btn-sketch {
+  background: #ffd0721a;
+  color: var(--gold);
+  border: 5px solid;
+  border-image: url("/d/framesketch1.png") 10 / 8px round;
+  font-size: 1.4rem;
+  margin: 1em 0;
+  padding: 0.25em 1em;
+  text-align: left;
+  font-family: var(--fontA);
+  backdrop-filter: blur(2px);
+  text-shadow: 0px 0px 4px black;
+  &:hover {
+    background: var(--gold);
+    color: #100e0c;
+    text-shadow: 0px 0px 0px black;
+  }
+}
+
+.tc {
+  width: 300px;
+  height: 600px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 86%);
+  &::before {
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    width: 98%;
+    height: 79%;
+    // background: red;
+    background: url("/b/cracked.png");
+    background-size: 450px;
+    z-index: -2;
+    border: 3px solid;
+    border-image: url("/d/framesketch2.png") 20 / 3px round;
+    transition: all 500ms ease;
+  }
+
+  .fn {
+    position: absolute;
+    top: -100%;
+    left: 76%;
+    // transform: translateX(50%);
+    rotate: 90deg;
+    transform-origin: left bottom;
+    font-size: 3.5rem;
+    z-index: -2;
+    transition: all 500ms ease;
+    letter-spacing: -4px;
+    text-shadow: 0px 0px 5px black;
+    font-family: var(--fontA);
+  }
+  .tcart {
+    width: 99%;
+    height: 100%;
+    object-fit: cover;
+    top: 5%;
+    position: relative;
+    object-position: top;
+    transition: all 250ms ease;
+    filter: drop-shadow(0px 0px 10px black);
+  }
+  &:hover {
+    .tcart {
+      scale: 1.02;
+      top: 0%;
+    }
+    .fn {
+      top: -10%;
+    }
+    &::before {
+      top: 22%;
+    }
+  }
+}
+
+.confine {
+  max-width: 1200px;
+  margin: 0 auto;
+}
