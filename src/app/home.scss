@@ -89,20 +89,6 @@
     }
   }
 
-  .section-divider {
-    height: 500px;
-    background: url("/b/looping_div.png");
-    mask-image: linear-gradient(
-      to bottom,
-      transparent,
-      white 30%,
-      transparent 80%
-    );
-    background-size: 100%;
-    opacity: 0.5;
-    background-attachment: fixed;
-  }
-
   #talent-scroll {
     .heading {
       display: flex;

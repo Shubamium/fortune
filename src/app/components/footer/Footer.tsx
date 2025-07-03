@@ -21,18 +21,17 @@ export default function Footer({}: Props) {
                 <TLink href="/" className="btn btn-fnav">
                   HOME
                 </TLink>
+
+                <TLink href="/about" className="btn btn-fnav">
+                  ABOUT
+                </TLink>
                 <TLink href="/news" className="btn btn-fnav">
                   NEWS
                 </TLink>
                 <TLink href="/talents" className="btn btn-fnav">
                   TALENTS
                 </TLink>
-                <TLink href="/teams" className="btn btn-fnav">
-                  TEAMS
-                </TLink>
-                <TLink href="/about" className="btn btn-fnav">
-                  ABOUT
-                </TLink>
+
                 <TLink href="/contacts" className="btn btn-fnav">
                   CONTACTS
                 </TLink>

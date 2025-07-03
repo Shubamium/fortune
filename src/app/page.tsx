@@ -44,26 +44,26 @@ export default function Home() {
         <img src="/d/dust.png" alt="" className="dust" />
         <div className="scroller">
           <div className="scroll">
-            <div className="tc">
+            <TLink href="/talent/fortune" className="tc">
               <img src="/g/tcart.png" className="tcart" alt="" />
               <h2 className="fn">FORTUNE</h2>
-            </div>
-            <div className="tc">
+            </TLink>
+            <TLink href="/talent/fortune" className="tc">
               <img src="/g/tcart.png" className="tcart" alt="" />
               <h2 className="fn">FORTUNE</h2>
-            </div>
-            <div className="tc">
+            </TLink>
+            <TLink href="/talent/fortune" className="tc">
               <img src="/g/tcart.png" className="tcart" alt="" />
               <h2 className="fn">FORTUNE</h2>
-            </div>
-            <div className="tc">
+            </TLink>
+            <TLink href="/talent/fortune" className="tc">
               <img src="/g/tcart.png" className="tcart" alt="" />
               <h2 className="fn">FORTUNE</h2>
-            </div>
-            <div className="tc">
+            </TLink>
+            <TLink href="/talent/fortune" className="tc">
               <img src="/g/tcart.png" className="tcart" alt="" />
               <h2 className="fn">FORTUNE</h2>
-            </div>
+            </TLink>
           </div>
         </div>
       </section>

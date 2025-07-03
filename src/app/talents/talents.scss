@@ -1,0 +1,55 @@
+#p_tal {
+  // margin-top: 300px;
+  padding-top: 300px;
+  #ptalhead {
+    display: flex;
+    .l {
+      position: relative;
+      .frag {
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        width: 120%;
+        height: 100%;
+        scale: 1.8;
+        z-index: -2;
+        padding-right: 100px;
+      }
+      h2 {
+        padding-left: 0.5em;
+        font-size: 5rem;
+        letter-spacing: 5px;
+        font-weight: 400;
+        color: #100e0c;
+      }
+    }
+  }
+
+  .generation {
+    margin-top: 100px;
+    .title {
+      align-items: center;
+      filter: drop-shadow(0px 0px 14px #ffd072b2);
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1em;
+      h2 {
+        text-align: center;
+        font-family: var(--fontA);
+        font-size: 4rem;
+      }
+      img {
+        width: 300px;
+      }
+    }
+    .tal {
+      display: flex;
+      gap: 3em;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      flex-wrap: wrap;
+      max-width: 1920px;
+    }
+  }
+}
