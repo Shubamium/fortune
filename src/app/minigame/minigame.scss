@@ -1,0 +1,77 @@
+#minigame {
+  background: url("/b/crimson-wall.png");
+  min-height: 0;
+  height: 100vh;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .finalCount {
+    font-size: 6rem;
+    color: var(--gold);
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+    font-family: var(--fontA);
+    filter: drop-shadow(0px 0px 4px black);
+    line-height: 1;
+    font-weight: 800;
+  }
+  .mainCount {
+    font-size: 4rem;
+    color: var(--gold);
+    -webkit-text-stroke: 2px black;
+    text-stroke: 2px black;
+    font-family: var(--fontA);
+    filter: drop-shadow(0px 0px 2px black);
+    font-weight: 800;
+  }
+  .control {
+    position: relative;
+    .btn-logo {
+      width: 500px;
+      filter: drop-shadow(0px 0px 14px black);
+      user-select: none;
+      img {
+        user-select: none;
+      }
+      &:hover {
+        filter: drop-shadow(0px 0px 14px #ffd07270);
+      }
+    }
+    p {
+      position: absolute;
+      left: 100%;
+      width: 100%;
+      font-size: 1.2rem;
+      user-select: none;
+      rotate: 20deg;
+    }
+  }
+
+  .btn-mute {
+    position: fixed;
+
+    bottom: 40px;
+    left: 40px;
+
+    &.muted {
+      filter: brightness(0.5) grayscale(1);
+    }
+  }
+}
+
+body:has(#minigame) {
+  #footer {
+    display: none;
+  }
+  #header {
+    .logo {
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+  }
+}

@@ -12,7 +12,7 @@ const antiqua = Modern_Antiqua({
 });
 
 const spectral = Spectral({
-  weight: ["200", "300", "400", "500", "600"],
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--font-spectral",
 });
