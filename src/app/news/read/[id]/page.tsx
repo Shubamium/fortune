@@ -1,18 +1,36 @@
 import React from "react";
 
-type Props = {};
 import "./newsread.scss";
 import TLink from "@/app/components/tlink/TLink";
-export default function page({}: Props) {
+import { fetchData, urlFor } from "@/app/db/db";
+import { redirect } from "next/navigation";
+import { PortableText } from "next-sanity";
+
+type Props = {
+  params: Promise<{
+    id: string;
+  }>;
+};
+
+export default async function page({ params }: Props) {
+  const slug = (await params).id;
+
+  const n = await fetchData<any>(
+    `*[_type == "news" && slug.current == "${slug}"][0]{...}`
+  );
+
+  if (!n) {
+    redirect("/news");
+  }
   return (
     <main id="p_read">
       <div className="ban">
-        <img src="/g/news-place.png" alt="" />
+        <img src={n.bn && urlFor(n.bn).height(1024).url()} alt="" />
       </div>
       <div className="n-head">
-        <h2 className="title">News Title</h2>
+        <h2 className="title">{n.t}</h2>
         <hr />
-        <p className="date">17 March 2025</p>
+        <p className="date">{new Date(n.d).toDateString()}</p>
         <img src="/d/scratched2.png" alt="" />
       </div>
 
@@ -23,30 +41,14 @@ export default function page({}: Props) {
           </TLink>
         </div>
         <article>
-          <h1>Hello</h1>
-          <h2>H2</h2>
-          <h3>h3</h3>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus blanditiis modi, voluptas ipsam corrupti dolore,
-            reiciendis laborum ullam ducimus, ipsa voluptatem quibusdam!
-            Explicabo vero minus odit vitae. Ea, dolor, nisi facilis tempora
-            perspiciatis molestiae est mollitia, eaque voluptatum aspernatur
-            reiciendis dolorum consequatur! Eos perspiciatis libero ullam
-            tempora ar fugiat veniam quae corrupti aperiam repellat dignissimos
-            beatae!
-          </p>
-          <img src="/b/fortunefire.png" alt="" />
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus blanditiis modi, voluptas ipsam corrupti dolore,
-            reiciendis laborum ullam ducimus, ipsa voluptatem quibusdam!
-            Explicabo vero minus odit vitae. Ea, dolor, nisi facilis tempora
-            perspiciatis molestiae est mollitia, eaque voluptatum aspernatur
-            reiciendis dolorum consequatur! Eos perspiciatis libero ullam
-            tempora ar fugiat veniam quae corrupti aperiam repellat dignissimos
-            beatae!
-          </p>
+          <PortableText
+            value={n.at}
+            components={{
+              types: {
+                image: ({ value }) => <img src={urlFor(value).url()} alt="" />,
+              },
+            }}
+          />
         </article>
       </div>
     </main>

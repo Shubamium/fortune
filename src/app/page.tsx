@@ -14,19 +14,19 @@ export default async function Home() {
 			}
 		}`);
   console.log(td);
+
+  const gd = await fetchData<any>(`
+		*[_type == "general" && preset == "main"][0]{
+	  	'hv': hv.asset->url		
+		}
+	`);
   return (
     <main id={"page_home"}>
       <div
         className="main-video
 			"
       >
-        <video
-          src="https://ik.imagekit.io/h4fj7874u/output.mp4?updatedAt=1751100721117"
-          autoPlay
-          muted
-          id="hero-vid"
-          loop
-        ></video>
+        <video src={gd.hv} autoPlay muted id="hero-vid" loop></video>
         <img src="/g/" alt="" />
         <div className="arrow">
           <img src="/d/arr.svg" alt="" />

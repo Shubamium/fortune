@@ -2,10 +2,17 @@ import TLink from "../components/tlink/TLink";
 import "./about.scss";
 import React from "react";
 import Units from "./Units";
+import { fetchData, urlFor } from "../db/db";
 
 type Props = {};
 
-export default function page({}: Props) {
+export default async function page({}: Props) {
+  const gd = await fetchData<any>(`
+			*[_type == "general" && preset == "main"][0]{
+				ul,
+				pt,
+			}
+	`);
   return (
     <main id="p_about">
       <section id="main-about">
@@ -93,7 +100,7 @@ export default function page({}: Props) {
         </div>
       </section>
 
-      <Units />
+      <Units ul={gd.ul} />
 
       <section id="generation">
         <div className="top">
@@ -110,8 +117,9 @@ export default function page({}: Props) {
         <h2>PARTNERS</h2>
         <img src="/d/dash2.png" alt="" className="dash" />
         <div className="plist">
-          <img src="/g/7mc.png" alt="" />
-          <img src="/g/uwumarket.png" alt="" />
+          {gd.pt?.map((p: any, i: number) => (
+            <img src={p && urlFor(p).height(500).url()} alt="" />
+          ))}
         </div>
       </section>
     </main>
