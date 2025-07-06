@@ -1,16 +1,37 @@
 import { FaArrowRight, FaNewspaper } from "react-icons/fa";
 import TLink from "./components/tlink/TLink";
 import "./home.scss";
-export default function Home() {
+import { GiScrollQuill, GiSwordAltar } from "react-icons/gi";
+import TalentScroll from "./home/TalentScroll";
+import { fetchData } from "./db/db";
+
+export default async function Home() {
+  const td = await fetchData<any>(`*[_type == "talents"]{
+			slug,
+			n,
+			art{
+			la
+			}
+		}`);
+  console.log(td);
   return (
     <main id={"page_home"}>
-      <video
-        src="https://ik.imagekit.io/h4fj7874u/output.mp4?updatedAt=1751100721117"
-        autoPlay
-        muted
-        id="hero-vid"
-        loop
-      ></video>
+      <div
+        className="main-video
+			"
+      >
+        <video
+          src="https://ik.imagekit.io/h4fj7874u/output.mp4?updatedAt=1751100721117"
+          autoPlay
+          muted
+          id="hero-vid"
+          loop
+        ></video>
+        <img src="/g/" alt="" />
+        <div className="arrow">
+          <img src="/d/arr.svg" alt="" />
+        </div>
+      </div>
 
       <section id="hero">
         <article>
@@ -20,7 +41,9 @@ export default function Home() {
             Pioneering the Next Generation of VTubing, we accomplish what's
             never been done before
           </p>
-          <button className="btn btn-sketch">Learn More</button>
+          <a href="/about" className="btn btn-sketch">
+            Learn More
+          </a>
         </article>
         <div className="arrow">
           <img src="/d/arr.svg" alt="" />
@@ -29,69 +52,35 @@ export default function Home() {
       </section>
 
       <div className="section-divider"></div>
-      <section id="talent-scroll">
-        <div className="heading">
-          <div className="l">
-            <img src="/d/fragmentbg.png" className="frag" alt="" />
-            <h2>TALENTS</h2>
-          </div>
-          <div className="r">
-            <TLink href="#" className="btn btn-sketch">
-              All Talents <FaArrowRight />
-            </TLink>
-          </div>
-        </div>
-        <img src="/d/dust.png" alt="" className="dust" />
-        <div className="scroller">
-          <div className="scroll">
-            <TLink href="/talent/fortune" className="tc">
-              <img src="/g/tcart.png" className="tcart" alt="" />
-              <h2 className="fn">FORTUNE</h2>
-            </TLink>
-            <TLink href="/talent/fortune" className="tc">
-              <img src="/g/tcart.png" className="tcart" alt="" />
-              <h2 className="fn">FORTUNE</h2>
-            </TLink>
-            <TLink href="/talent/fortune" className="tc">
-              <img src="/g/tcart.png" className="tcart" alt="" />
-              <h2 className="fn">FORTUNE</h2>
-            </TLink>
-            <TLink href="/talent/fortune" className="tc">
-              <img src="/g/tcart.png" className="tcart" alt="" />
-              <h2 className="fn">FORTUNE</h2>
-            </TLink>
-            <TLink href="/talent/fortune" className="tc">
-              <img src="/g/tcart.png" className="tcart" alt="" />
-              <h2 className="fn">FORTUNE</h2>
-            </TLink>
-          </div>
-        </div>
-      </section>
+      <TalentScroll tl={td} />
+      <div className="arrow centerarr">
+        <img src="/d/arr.svg" alt="" />
+      </div>
       <div className="section-divider"></div>
 
       <section id="contact">
         <div className="confine">
           <div className="l">
             <div className="t">
-              <div className="btn btn-ct">
+              <TLink href="/news" className="btn btn-ct">
                 <FaNewspaper />
                 <p>NEWS</p>
-              </div>
+              </TLink>
             </div>
             <div className="c">
-              <div className="btn btn-ct">
-                <FaNewspaper />
-                <p>NEWS</p>
-              </div>
-              <div className="btn btn-ct">
-                <FaNewspaper />
-                <p>NEWS</p>
-              </div>
+              <TLink href="/talents" className="btn btn-ct">
+                <GiSwordAltar />
+                <p>TALENTS</p>
+              </TLink>
+              <TLink href="/contacts" className="btn btn-ct">
+                <GiScrollQuill />
+                <p>CONTACT</p>
+              </TLink>
             </div>
             <div className="b">
               <div className="btn btn-ct">
-                <FaNewspaper />
-                <p>NEWS</p>
+                <img src="/g/icon2.png" alt="" />
+                <p>ABOUT</p>
               </div>
             </div>
           </div>

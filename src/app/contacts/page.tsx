@@ -35,6 +35,7 @@ export default function page({}: Props) {
           </div>
 
           <form id="ctform">
+            <img src="/g/icon2.png" alt="" className="icon" />
             <div className="fg">
               <div className="f">
                 <label htmlFor="name">Name</label>

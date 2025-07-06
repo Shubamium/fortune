@@ -11,7 +11,18 @@
   top: 0%;
   left: 0%;
   width: 100%;
+  .chain-r {
+    position: absolute;
+    top: 0%;
+    width: 120px;
+    user-select: none;
+    pointer-events: none;
+    left: 0%;
+    z-index: 150;
+  }
   .logo {
+    position: relative;
+
     height: 180px;
     width: 440px;
     background: url("/b/headbg.png");
@@ -40,6 +51,16 @@
 
   nav {
     padding-right: 2em;
+
+    .chain-l {
+      position: absolute;
+      top: -50px;
+      right: -90px;
+      rotate: 15deg;
+      user-select: none;
+      pointer-events: none;
+      width: 250px;
+    }
   }
 }
 

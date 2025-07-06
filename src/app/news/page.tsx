@@ -40,6 +40,9 @@ export default function page({}: Props) {
         <div className="btn btn-cat">Category 6</div>
       </div>
       <div id="nlist">
+        <img src="/d/chain.png" alt="" className="chain l" />
+        <img src="/d/chain.png" alt="" className="chain r" />
+
         <div className="n">
           <div className="ban">
             <img src="/g/news-place.png" alt={""} />

@@ -140,7 +140,18 @@ main {
   position: relative;
   z-index: 1;
   cursor: pointer;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 86%);
+  .dia-side {
+    position: absolute;
+    &.l {
+      left: -15px;
+      top: 40%;
+    }
+    &.r {
+      right: -15px;
+      top: 25%;
+    }
+  }
+
   &::before {
     content: "";
     position: absolute;
@@ -154,12 +165,14 @@ main {
     z-index: -2;
     border: 3px solid;
     border-image: url("/d/framesketch2.png") 20 / 3px round;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 86%);
+    mask-image: linear-gradient(to bottom, white, transparent);
     transition: all 500ms ease;
   }
 
   .fn {
     position: absolute;
-    top: -100%;
+    top: -60%;
     left: 70%;
     // transform: translateX(50%);
     rotate: 90deg;
@@ -171,6 +184,11 @@ main {
     letter-spacing: -4px;
     text-shadow: 0px 0px 5px black;
     font-family: var(--fontA);
+    user-select: none;
+
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gold);
+    pointer-events: none;
   }
   .tcart {
     width: 99%;
@@ -181,6 +199,16 @@ main {
     object-position: top;
     transition: all 250ms ease;
     filter: drop-shadow(0px 0px 10px black);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 80%);
+    mask-image: linear-gradient(to bottom, white 50%, transparent);
+
+    &.miss {
+      object-fit: contain;
+      width: 100%;
+      object-position: center;
+      top: 12%;
+      scale: 0.5;
+    }
   }
   &:hover {
     .tcart {
@@ -189,9 +217,12 @@ main {
     }
     .fn {
       opacity: 1;
-      color: var(--gold);
+      // color: var(--gold);
       filter: drop-shadow(0px 0px 10px black);
       top: -10%;
+      color: transparent;
+      font-weight: bolder;
+      -webkit-text-stroke: 1px var(--gold);
     }
     &::before {
       top: 22%;
@@ -202,4 +233,45 @@ main {
 .confine {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.arrow {
+  animation: arrow 0.4s infinite ease-in-out alternate-reverse;
+
+  @keyframes arrow {
+    from {
+      transform: translateY(20px);
+    }
+    to {
+      transform: translateY(-20px);
+    }
+  }
+}
+
+.infitext {
+  display: flex;
+  gap: 1em;
+  position: absolute;
+  z-index: -2;
+  rotate: -3deg;
+  transform-origin: left;
+  p {
+    font-size: 10rem;
+    font-weight: bold;
+    color: transparent;
+    text-shadow: 0px 0px 10px black;
+    -webkit-text-stroke: 1px white;
+    opacity: 0.1;
+    mix-blend-mode: difference;
+  }
+  animation: infitext 100s infinite linear alternate-reverse;
+
+  @keyframes infitext {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-80%);
+    }
+  }
 }

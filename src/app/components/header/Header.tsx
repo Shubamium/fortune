@@ -10,10 +10,12 @@ export default function Header({}: Props) {
   return (
     <>
       <header id={"header"}>
+        <img src="/d/chain-h.png" alt="" className="chain-r" />
         <TLink href="/" className="logo">
           <img src="/g/logo.png" alt="" />
         </TLink>
         <nav>
+          <img src="/d/chain.png" alt="" className="chain-l" />
           <div className="btn" onClick={() => setOpen(!open)}>
             <img src="/g/menubtn.png" alt="" />
           </div>
@@ -27,6 +29,7 @@ export default function Header({}: Props) {
         }}
       >
         <div className="side">
+          <img src="/g/icon2.png" alt="" height={120} />
           <TLink href="/" className="btn btn-fnav">
             HOME
           </TLink>

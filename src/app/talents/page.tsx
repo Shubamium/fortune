@@ -10,6 +10,30 @@ export default function page({}: Props) {
         <div className="l">
           <img src="/d/fragmentbg.png" className="frag" alt="" />
           <h2>TALENTS</h2>
+          <div className="infitext">
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+            <p>TALENTS</p>
+          </div>
         </div>
       </section>
 

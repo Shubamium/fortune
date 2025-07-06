@@ -6,6 +6,7 @@ import { FaArrowRight, FaPlay } from "react-icons/fa";
 import { CgArrowRight } from "react-icons/cg";
 import { BsTiktok, BsYoutube } from "react-icons/bs";
 import { FaXTwitter } from "react-icons/fa6";
+import Vocal from "./Vocal";
 export default function page({}: Props) {
   return (
     <main id="p_taldat">
@@ -16,26 +17,22 @@ export default function page({}: Props) {
       </section>
       <section id="tal-dat">
         <div className="l">
-          <div className="vocal">
-            <div className="line">
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco.
-              </p>
-            </div>
-            <div className="ctrl">
-              <div className="btn btn-play">
-                <FaPlay />
-              </div>
-            </div>
-          </div>
+          <Vocal
+            line={`   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt udt labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco.`}
+            audio={
+              "https://diviextended.com/wp-content/uploads/2021/10/sound-of-waves-marine-drive-mumbai.mp3"
+            }
+          />
           <div className="mascot">
             <img src="/g/plush.png" alt="" />
           </div>
         </div>
         <div className="r">
           <div className="vid">
+            <img src="/d/tal-side.png" alt="" className="side" />
+            <img src="/d/chain.png" alt="" className="chain" />
             <iframe
               src="https://www.youtube.com/embed/msqnELT59Nk?si=XPpctBYo8Lhg057I"
               title="YouTube video player"
@@ -57,6 +54,8 @@ export default function page({}: Props) {
         <div className="l">
           <img src="/g/talpfp2.png" alt="" className="pfp" />
           <img src="/g/pfpedge.png" alt="" className="edge" />
+
+          <img src="/d/tal-side.png" alt="" className="side" />
           <div className="contacts">
             <a href="#" target="_blank" className="btn btn-pfpct">
               {" "}
@@ -78,6 +77,8 @@ export default function page({}: Props) {
             <hr></hr>
           </div>
           <div className="profile-panel">
+            <img src="/d/chain.png" alt="" className="chain" />
+
             <div className="top">
               <div className="pp-head">
                 <img src="/g/logo.png" alt="" className="logo" />
@@ -165,6 +166,7 @@ export default function page({}: Props) {
               </div>
             </div>
           </div>
+          <img src="/d/chain.png" alt="" className="chain-bot" />
         </div>
       </section>
 

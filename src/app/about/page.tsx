@@ -36,8 +36,14 @@ export default function page({}: Props) {
         </div>
       </section>
       <section id="goal-main">
+        <img src="/d/chain.png" alt="" className="chain l" />
+        <img src="/d/chain.png" alt="" className="chain r" />
+
+        <img src="/d/clock.png" alt="" className="clock r" />
+        <img src="/d/clock.png" alt="" className="clock l" />
         <img src="/g/goaldiamond.png" alt="" className="dia" />
         <h2>GOAL</h2>
+        <img src="/d/dash2.png" alt="" className="dash" />
 
         <div className="crep">
           <h3>The Creativity Project</h3>
@@ -64,7 +70,7 @@ export default function page({}: Props) {
       <section id="goal-expand">
         <div className="l">
           <h2>Our goal? To expand it!</h2>
-
+          <img src="/d/dash2.png" alt="" className="dash" />
           <p>
             As we move forward we will continually innovate past the boundaries
             of what was thought to be achievable using media, music, animation,
@@ -102,6 +108,7 @@ export default function page({}: Props) {
 
       <section id="partners">
         <h2>PARTNERS</h2>
+        <img src="/d/dash2.png" alt="" className="dash" />
         <div className="plist">
           <img src="/g/7mc.png" alt="" />
           <img src="/g/uwumarket.png" alt="" />
