@@ -22,11 +22,19 @@ export default function page({}: Props) {
             <div className="other">
               <h2>Other ways of Contact</h2>
               <div className="ct">
-                <a href="#" target="_blank" className="btn ">
+                <a
+                  href="https://x.com/fortunevtuber?lang=en"
+                  target="_blank"
+                  className="btn "
+                >
                   <span>Reach Out On</span>
                   <FaXTwitter />
                 </a>
-                <a href="#" target="_blank" className="btn ">
+                <a
+                  href="mailto:FortuneVTbusiness@gmail.com"
+                  target="_blank"
+                  className="btn "
+                >
                   <span>Our Email</span>
                   <CgMail />
                 </a>

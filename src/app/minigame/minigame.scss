@@ -18,9 +18,19 @@
     filter: drop-shadow(0px 0px 4px black);
     line-height: 1;
     font-weight: 800;
+
+    animation: swing 0.4s infinite ease-in-out alternate;
+    @keyframes swing {
+      from {
+        transform: rotate(5deg) scale(1);
+      }
+      to {
+        transform: rotate(-5deg) scale(1);
+      }
+    }
   }
   .mainCount {
-    font-size: 4rem;
+    font-size: 5.2rem;
     color: var(--gold);
     -webkit-text-stroke: 2px black;
     text-stroke: 2px black;
@@ -59,6 +69,24 @@
 
     &.muted {
       filter: brightness(0.5) grayscale(1);
+    }
+  }
+
+  .mini-for {
+    position: fixed;
+    user-select: none;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    img {
+      position: absolute;
+      height: 300px;
+
+      animation: swing 0.5s infinite steps(2) alternate;
+
+      width: 300px;
     }
   }
 }
