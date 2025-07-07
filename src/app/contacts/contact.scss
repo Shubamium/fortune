@@ -133,4 +133,41 @@
       }
     }
   }
+
+  .loading {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #0f0f0f8f;
+    backdrop-filter: blur(5px);
+    top: 0%;
+    left: 0%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    font-size: 2rem;
+
+    &.load {
+      opacity: 1;
+    }
+    &.hid {
+      opacity: 0;
+      user-select: none;
+      pointer-events: none;
+    }
+    transition: all 1500ms ease;
+    svg {
+      animation: speen 2s infinite ease-in-out;
+      @keyframes speen {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
 }

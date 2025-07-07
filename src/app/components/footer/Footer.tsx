@@ -3,9 +3,21 @@ import TLink from "../tlink/TLink";
 import { FaDiscord, FaTwitch, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import "./footer.scss";
+import { fetchData, urlFor } from "@/app/db/db";
 type Props = {};
 
-export default function Footer({}: Props) {
+export default async function Footer({}: Props) {
+  const tl = await fetchData<any[]>(`
+		*[_type == "talents"]{
+			art{
+				ft
+			}
+		}
+	`);
+
+  const randomTalentArt = tl[Math.floor(Math.random() * tl.length)].art?.ft;
+
+  console.log(tl, randomTalentArt);
   return (
     <>
       <footer id="footer">
@@ -53,7 +65,9 @@ export default function Footer({}: Props) {
             </div>
           </div>
           <div className="a">
-            <img src="/g/fortunepfp.png" alt="" />
+            <img
+              src={randomTalentArt && urlFor(randomTalentArt).height(600).url()}
+            />
           </div>
         </div>
       </footer>
