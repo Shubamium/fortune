@@ -249,6 +249,7 @@
         border: 1px solid rgba(255, 255, 255, 0.356);
         background-size: cover;
         position: relative;
+        box-shadow: 50px 0px 120px black inset;
         .chain {
           user-select: none;
           pointer-events: none;
@@ -441,12 +442,14 @@
         }
       }
     }
+    box-shadow: 0px 0px 120px black inset;
 
     .vid-list {
       position: relative;
       z-index: 1;
       transform-origin: left;
       rotate: -3deg;
+
       &::before {
         content: "";
         position: absolute;

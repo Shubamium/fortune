@@ -68,7 +68,8 @@
   background: rgba(2, 0, 0, 0.747);
   backdrop-filter: blur(10px);
   position: fixed;
-
+  z-index: 5000;
+  top: 0%;
   &.open {
     opacity: 1;
     right: 0%;
@@ -92,7 +93,7 @@
     height: 100%;
     transition: all 500ms ease;
     display: flex;
-    width: 100%;
+    width: 60%;
     right: 0%;
     position: fixed;
     justify-content: center;
@@ -100,23 +101,20 @@
     padding: 1em;
     perspective: 1200px;
     perspective-origin: 50%;
+    box-shadow: 50px 0px 120px black inset;
+
     img {
       animation: realspin 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
-      @keyframes realspin {
-        from {
-          transform: rotateY(0deg);
-        }
-        to {
-          transform: rotateY(360deg);
-        }
-      }
     }
     .btn-fnav {
       font-size: clamp(3rem, 8vw, 5rem);
       font-family: var(--fontM);
       transform-origin: right;
+
+      text-shadow: 0px 0px 10px white;
       &:hover {
         color: var(--gold);
+        text-shadow: none;
         filter: drop-shadow(0px 0px 14px var(--gold));
       }
     }
@@ -124,5 +122,4 @@
   }
   height: 100%;
   width: 100%;
-  z-index: 100;
 }

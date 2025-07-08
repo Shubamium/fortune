@@ -4,6 +4,7 @@ import { Spectral, Modern_Antiqua, Spectral_SC } from "next/font/google";
 import { CSSProperties } from "react";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Loading from "./components/loading/Loading";
 
 const antiqua = Modern_Antiqua({
   weight: ["400"],
@@ -37,6 +38,7 @@ export default function RootLayout({
           } as CSSProperties
         }
       >
+        <Loading />
         <Header />
         {children}
         <Footer />
