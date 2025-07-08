@@ -78,10 +78,10 @@ export default async function Home() {
               </TLink>
             </div>
             <div className="b">
-              <div className="btn btn-ct">
+              <TLink href="/about" className="btn btn-ct">
                 <img src="/g/icon2.png" alt="" />
                 <p>ABOUT</p>
-              </div>
+              </TLink>
             </div>
           </div>
           <div className="r">
