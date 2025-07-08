@@ -43,7 +43,8 @@
     }
     @keyframes fortunefloat {
       to {
-        left: -20%;
+        // transform: translateX(-800px);
+        translate: -800px;
         opacity: 0;
       }
       10% {
@@ -56,7 +57,9 @@
         opacity: 1;
       }
       from {
-        left: 120%;
+        translate: 1920px;
+        opacity: 0;
+        // transform: translateX(1920px);
       }
     }
   }
