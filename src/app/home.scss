@@ -62,16 +62,21 @@
       position: relative;
       // background: black;
       h2 {
-        font-size: 2.8rem;
+        font-size: 3.4rem;
         color: var(--gold);
-        line-height: 80%;
+        line-height: 0.5;
+        font-weight: 300;
+
+        letter-spacing: 2px;
         text-shadow: 0px 0px 20px var(--gold);
+        font-family: var(--fontA);
       }
       .sub {
         font-size: 3.5rem;
         color: white;
-        text-shadow: 0px 0px 20px var(--gold);
+        // text-shadow: 0px 0px 10px var(--gold);
         font-family: var(--fontMain);
+        color: #776d64;
       }
       .desc {
         letter-spacing: 2px;
