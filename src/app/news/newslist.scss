@@ -1,8 +1,11 @@
+@use "mixins" as *;
 #p_nl {
   min-height: 0;
   #featured {
     height: 800px;
-
+    @include mq(550) {
+      height: 600px;
+    }
     .cover {
       width: 100%;
       height: 100%;
@@ -38,12 +41,21 @@
       bottom: 0%;
       padding: 3em;
       filter: drop-shadow(0px 0px 4px black);
+      @include mq(1024) {
+        margin-bottom: 100px;
+      }
+      @include mq(420) {
+        padding: 1em;
+      }
       .date {
         font-size: 1rem;
       }
       .title {
         font-family: var(--fontA);
         font-size: 4rem;
+        @include mq(768) {
+          font-size: 2rem;
+        }
       }
       .ex {
         max-width: 700px;
@@ -73,9 +85,18 @@
         background-size: 100% 100%;
         background-repeat: no-repeat;
         width: 40px;
+
+        @include mq(550) {
+          height: 100px;
+          width: 30px;
+        }
         &.act {
           width: 50px;
+          @include mq(550) {
+            width: 35px;
+          }
           background-image: url("/d/p_active.svg");
+          filter: drop-shadow(0px 0px 12px #ffd07270);
         }
       }
     }
@@ -89,10 +110,19 @@
     padding: 0.85em 1em;
     gap: 1em;
     box-shadow: 0px 0px 12px black;
+
+    @include mq(1024) {
+      overflow-x: scroll;
+      justify-content: flex-start;
+    }
     .btn-cat {
       padding: 0.25em 1em;
       font-size: 1.4rem;
       color: white;
+      white-space: nowrap;
+      @include mq(1280) {
+        font-size: 1.1rem;
+      }
       &.act {
         background: url("/b/cat-btnbg.png");
         background-size: 100% 100%;
@@ -112,6 +142,10 @@
     position: relative;
     min-height: 900px;
     align-items: flex-start;
+
+    @include mq(420) {
+      padding: 50px 10px;
+    }
     .empty {
       text-align: center;
       font-size: 2rem;
@@ -140,6 +174,10 @@
       clip-path: polygon(100% 0, 100% 100%, 26% 100%, 0 85%, 0 0);
       display: flex;
       flex-direction: column;
+      @include mq(1280) {
+        width: 300px;
+      }
+
       .ban {
         box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.473) inset;
         height: auto;
@@ -173,6 +211,9 @@
           color: #909090;
           margin: 1em 0;
           font-size: 0.9rem;
+          @include mq(420) {
+            display: none;
+          }
         }
 
         .top {

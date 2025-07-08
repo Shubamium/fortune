@@ -1,7 +1,18 @@
+@use "mixins" as *;
+
 #p_read {
   .ban {
     height: 800px;
     position: relative;
+    @include mq(768) {
+      height: 500px;
+    }
+    @include mq(550) {
+      height: auto;
+      margin-top: 150px;
+      border-top: 2px solid var(--gold);
+    }
+
     &::after {
       content: "";
       position: absolute;
@@ -24,12 +35,21 @@
     text-align: center;
     h2 {
       font-size: 2rem;
+      @include mq(768) {
+        font-size: 1.2rem;
+      }
+      @include mq(550) {
+        font-size: 1rem;
+      }
     }
     hr {
       max-width: 300px;
       margin: 0.25em auto;
       border: 1px solid white;
       opacity: 0.3;
+      @include mq(550) {
+        opacity: 0.1;
+      }
     }
     p {
       color: white;
@@ -60,10 +80,35 @@
         position: sticky;
         top: 25%;
         right: 100%;
+        @include mq(1280) {
+          top: 300px;
+          img {
+            max-width: 150px;
+          }
+        }
+
+        @include mq(768) {
+          right: unset;
+          transform: translateY(-30px);
+          top: 20%;
+        }
+        @include mq(550) {
+          transform: translateY(-40px);
+        }
+        @include mq(320) {
+          transform: translateY(-50px);
+        }
+        @include mq(1024) {
+          rotate: 90deg;
+        }
       }
     }
     article {
       font-family: var(--fontA);
+
+      @include mq(420) {
+        text-align: justify;
+      }
       h1,
       h2,
       h3,
@@ -71,6 +116,9 @@
       h5,
       h6 {
         font-family: var(--fontA);
+        @include mq(768) {
+          font-size: 1.1rem;
+        }
       }
       img {
         width: 100%;
@@ -80,6 +128,16 @@
       }
       p {
         margin-bottom: 1em;
+      }
+      p,
+      a,
+      u,
+      b,
+      ul,
+      li {
+        @include mq(420) {
+          font-size: 1rem;
+        }
       }
     }
   }
