@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 #header {
   display: flex;
   // background: ;
@@ -11,6 +13,7 @@
   top: 0%;
   left: 0%;
   width: 100%;
+
   .chain-r {
     position: absolute;
     top: 0%;
@@ -19,6 +22,9 @@
     pointer-events: none;
     left: 0%;
     z-index: 150;
+    @include mq(768) {
+      display: none;
+    }
   }
   .logo {
     position: relative;
@@ -33,6 +39,13 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+
+    @include mq(768) {
+      height: 90px;
+      width: 200px;
+      background-size: 100%;
+      // background: none;
+    }
 
     transition: all 500ms ease;
     &:hover {
@@ -51,7 +64,23 @@
 
   nav {
     padding-right: 2em;
-
+    .btn {
+      position: relative;
+      z-index: 1;
+      @include mq(768) {
+        max-width: 40%;
+      }
+      img {
+        @include mq(768) {
+          width: 150px;
+        }
+        @include mq(420) {
+          width: 130px;
+          transform: translateX(10%);
+        }
+        height: 100%;
+      }
+    }
     .chain-l {
       position: absolute;
       top: -50px;
@@ -96,6 +125,10 @@
     width: 60%;
     right: 0%;
     position: fixed;
+
+    @include mq(768) {
+      width: 100%;
+    }
     justify-content: center;
     align-items: center;
     padding: 1em;
@@ -105,6 +138,11 @@
 
     img {
       animation: realspin 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+
+      @include mq(768) {
+        width: 200px;
+        height: auto;
+      }
     }
     .btn-fnav {
       font-size: clamp(3rem, 8vw, 5rem);
@@ -112,10 +150,33 @@
       transform-origin: right;
 
       text-shadow: 0px 0px 10px white;
+      width: 100%;
+      text-align: center;
+      mask-image: linear-gradient(to right, transparent, white, transparent);
+      transition: all 100ms ease;
+      padding-top: 0.15em;
       &:hover {
         color: var(--gold);
-        text-shadow: none;
-        filter: drop-shadow(0px 0px 14px var(--gold));
+        text-shadow: 0px 0px 10px var(--gold);
+        background: black;
+        scale: 1;
+        span {
+          display: block;
+          scale: 1.2;
+        }
+      }
+      span {
+        transition: all 500ms ease;
+        scale: 1;
+      }
+
+      @include mq(550) {
+        // color: var(--gold);
+        text-shadow: 0px 0px 10px var(--gold);
+        margin: 0.15em;
+        background: black;
+        gap: 1em;
+        font-size: 1.8rem;
       }
     }
     flex-direction: column;

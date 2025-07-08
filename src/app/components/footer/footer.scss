@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 #footer {
   display: flex;
   justify-content: flex-end;
@@ -20,6 +22,17 @@
       height: 100%;
       width: 100%;
     }
+    @include mq(1700) {
+      max-width: 60%;
+    }
+    @include mq(1600) {
+      max-width: 40%;
+    }
+
+    @include mq(1280) {
+      max-width: 30%;
+      z-index: 100;
+    }
   }
   .r {
     width: 40%;
@@ -32,7 +45,26 @@
     // background-size: 100% 100%;
     filter: drop-shadow(0px 0px 20px #ffd07252);
     position: relative;
+    @include mq(620) {
+      display: flex;
+      flex-direction: column;
+    }
 
+    @include mq(1700) {
+      width: 50%;
+    }
+    @include mq(1440) {
+      width: 60%;
+    }
+    @include mq(1280) {
+      width: 90%;
+      padding: 0 2em;
+      padding-left: 20%;
+    }
+    @include mq(1024) {
+      width: 100%;
+      padding-left: 10%;
+    }
     .ftbgr {
       // display: none;
       position: absolute;
@@ -41,18 +73,33 @@
       user-select: none;
       pointer-events: none;
       height: 100%;
+
+      @include mq(1700) {
+        right: -45%;
+      }
+      @include mq(1440) {
+        right: -40%;
+      }
+      @include mq(1280) {
+        right: -20%;
+      }
+      @include mq(660) {
+        right: -40%;
+      }
     }
     .a {
       height: 100%;
       // background: red;
       position: relative;
       z-index: 2;
+
       &:hover {
         img {
           transform: translateY(-2%);
           scale: 1.1;
         }
       }
+
       img {
         // width: 100%;
         transform: translateY(0%);
@@ -67,25 +114,77 @@
         object-fit: contain;
         object-position: bottom;
       }
+      @include mq(620) {
+        // min-height: 500px;
+        height: auto;
+        width: 100%;
+        img {
+          position: relative;
+          max-width: 100%;
+          right: auto;
+          width: 100%;
+          height: 100%;
+        }
+      }
     }
     .c {
       margin: 8em 0;
+      @include mq(1024) {
+        z-index: 150;
+      }
 
+      @include mq(620) {
+        margin: 0;
+        padding: 2em 0;
+        padding-top: 5em;
+      }
       h2 {
         font-family: var(--fontA);
         font-size: 2rem;
         letter-spacing: 3px;
         margin-bottom: 0.25em;
+        @include mq(420) {
+          font-size: 1.5rem;
+          text-align: center;
+        }
       }
       .nav-links {
         display: grid;
         margin-bottom: 0.25em;
         grid-template-columns: 1fr 1fr;
+        @include mq(420) {
+          gap: 0.25em;
+        }
+        @include mq(380) {
+          display: flex;
+          flex-direction: column;
+        }
         .btn-fnav {
           transition: all 500ms ease;
           transform-origin: left;
           font-size: 1.4rem;
           letter-spacing: 2px;
+          @include mq(420) {
+            font-size: 1rem;
+            background: rgba(0, 0, 0, 0.66);
+            mask-image: linear-gradient(
+              to right,
+              white,
+              white 50%,
+              transparent
+            );
+            padding: 0.25em;
+          }
+          @include mq(380) {
+            font-size: 1.3rem;
+            text-align: center;
+            mask-image: linear-gradient(
+              to right,
+              transparent,
+              white,
+              transparent
+            );
+          }
           &:hover {
             color: var(--gold);
             text-shadow: 0px 0px 4px var(--gold);
@@ -152,5 +251,14 @@
     width: 200px;
     height: 2px;
     background: #6d6c6c;
+    @include mq(550) {
+      width: 20%;
+    }
+  }
+  @include mq(550) {
+    font-size: 1rem;
+  }
+  @include mq(420) {
+    font-size: 0.8rem;
   }
 }

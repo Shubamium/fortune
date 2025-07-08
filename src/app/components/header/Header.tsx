@@ -31,24 +31,24 @@ export default function Header({}: Props) {
         <div className="side">
           <img src="/g/iconbig.png" alt="" height={300} />
           <TLink href="/" className="btn btn-fnav">
-            HOME
+            <span>HOME</span>
           </TLink>
           <TLink href="/about" className="btn btn-fnav">
-            ABOUT
+            <span>ABOUT</span>
           </TLink>
 
           <TLink href="/talents" className="btn btn-fnav">
-            TALENTS
+            <span>TALENTS</span>
           </TLink>
 
           <TLink href="/news" className="btn btn-fnav">
-            NEWS
+            <span>NEWS</span>
           </TLink>
           <TLink href="/contacts" className="btn btn-fnav">
-            CONTACT
+            <span>CONTACT</span>
           </TLink>
           <a className="btn btn-fnav" onClick={() => setOpen(!open)}>
-            CLOSE
+            <span>CLOSE</span>
           </a>
         </div>
       </div>

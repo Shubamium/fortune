@@ -28,7 +28,7 @@ export default function TalentScroll({ tl }: Props) {
   useEffect(() => {
     if (tl) {
       const target = -measure.width;
-      animate(x, [0, target - 50], {
+      animate(x, [0, target], {
         duration: at.length * 3,
         repeat: Infinity,
         repeatDelay: 0,

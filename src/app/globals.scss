@@ -1,3 +1,4 @@
+@use "mixins" as *;
 :root {
   --gold: #ffd172;
 }
@@ -149,6 +150,11 @@ main {
   background-size: 100%;
   opacity: 0.5;
   background-attachment: fixed;
+
+  @include mq(768) {
+    height: 300px;
+    background-size: 1200px;
+  }
 }
 .tc {
   width: 300px;
@@ -156,6 +162,7 @@ main {
   position: relative;
   z-index: 1;
   cursor: pointer;
+
   .dia-side {
     position: absolute;
     &.l {
