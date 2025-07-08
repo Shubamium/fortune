@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import TLink from "../components/tlink/TLink";
 import { FaArrowRight } from "react-icons/fa";
 import { urlFor } from "../db/db";
+import { useAnimate, motion, useMotionValue } from "motion/react";
+import useMeasure from "react-use-measure";
 
 type Props = {
   tl: any[];
@@ -19,8 +21,24 @@ export default function TalentScroll({ tl }: Props) {
     }
     setAt(copied);
   }, [tl]);
+
+  const x = useMotionValue(0);
+  const [scope, animate] = useAnimate();
+  const [measureRef, measure] = useMeasure();
+  useEffect(() => {
+    if (tl) {
+      const target = -measure.width;
+      animate(x, [0, target - 50], {
+        duration: at.length * 3,
+        repeat: Infinity,
+        repeatDelay: 0,
+        ease: "linear",
+      });
+    }
+  }, [tl, measure]);
+
   return (
-    <section id="talent-scroll">
+    <section id="talent-scroll" ref={scope}>
       <div className="heading">
         <div className="infitext">
           <p>TALENTS</p>
@@ -59,11 +77,8 @@ export default function TalentScroll({ tl }: Props) {
       </div>
       <img src="/d/dust.png" alt="" className="dust" />
       <div className="scroller">
-        <div
-          className="mover"
-          style={{ animationDuration: `${at.length * 3.5}s` }}
-        >
-          <div className="scroll">
+        <motion.div style={{ x }} className="mover">
+          <div className="scroll" ref={measureRef}>
             {at.map((t: any, i: number) => {
               if (!t.slug)
                 return (
@@ -156,7 +171,7 @@ export default function TalentScroll({ tl }: Props) {
               );
             })}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -185,9 +185,9 @@
       );
       .mover {
         display: flex;
-        animation: talscroll 25s infinite alternate linear;
+        // animation: talscroll 25s infinite alternate linear;
         gap: 3em;
-        padding-inline: 300px;
+        // padding-inline: 300px;
         @keyframes talscroll {
           0% {
             transform: translateX(0%);
