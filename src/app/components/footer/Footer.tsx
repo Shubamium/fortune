@@ -9,13 +9,15 @@ type Props = {};
 export default async function Footer({}: Props) {
   const tl = await fetchData<any[]>(`
 		*[_type == "talents"]{
+		slug,
 			art{
 				ft
 			}
 		}
 	`);
 
-  const randomTalentArt = tl[Math.floor(Math.random() * tl.length)].art?.ft;
+  const rt = tl[Math.floor(Math.random() * tl.length)];
+  const randomTalentArt = rt?.art?.ft;
 
   console.log(tl, randomTalentArt);
   return (
@@ -64,11 +66,11 @@ export default async function Footer({}: Props) {
               </a>
             </div>
           </div>
-          <div className="a">
+          <TLink href={`/talent/${rt.slug.current}`} className="a">
             <img
               src={randomTalentArt && urlFor(randomTalentArt).height(600).url()}
             />
-          </div>
+          </TLink>
         </div>
       </footer>
       <div id="fcopymini">

@@ -82,21 +82,37 @@
       right: -100%;
     }
   }
-  transition: all 500ms ease;
+  transition:
+    all 1800ms cubic-bezier(0.165, 0.84, 0.44, 1),
+    opacity 350ms ease;
   .side {
     background: url("/b/concrete1.png");
+    background-size: contain;
     border-left: 5px solid var(--gold);
     height: 100%;
     transition: all 500ms ease;
     display: flex;
-    width: 40%;
+    width: 100%;
     right: 0%;
     position: fixed;
     justify-content: center;
+    align-items: center;
     padding: 1em;
-    align-items: flex-end;
+    perspective: 1200px;
+    perspective-origin: 50%;
+    img {
+      animation: realspin 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+      @keyframes realspin {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+    }
     .btn-fnav {
-      font-size: clamp(4rem, 11vw, 6rem);
+      font-size: clamp(3rem, 8vw, 5rem);
       font-family: var(--fontM);
       transform-origin: right;
       &:hover {

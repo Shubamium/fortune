@@ -29,7 +29,7 @@ export default function Header({}: Props) {
         }}
       >
         <div className="side">
-          <img src="/g/icon2.png" alt="" height={120} />
+          <img src="/g/iconbig.png" alt="" height={300} />
           <TLink href="/" className="btn btn-fnav">
             HOME
           </TLink>
