@@ -1,5 +1,10 @@
+@use "mixins" as *;
+
 #p_taldat {
   padding-bottom: 500px;
+  @include mq(550) {
+    padding-bottom: 150px;
+  }
   #main-art {
     display: flex;
     width: 100%;
@@ -7,12 +12,21 @@
     padding-top: 200px;
     user-select: none;
     pointer-events: none;
+    @include mq(550) {
+      padding-top: 100px;
+    }
     .mart {
       width: 600px;
       height: 1200px;
       margin: 0 auto;
       object-fit: contain;
       filter: drop-shadow(0px 0px 8px black);
+      @include mq(550) {
+        width: 400px;
+      }
+      @include mq(420) {
+        width: 100%;
+      }
     }
     position: relative;
     .deco-tal {
@@ -24,6 +38,9 @@
       left: 50%;
       top: -10%;
       transform: translate(-50%);
+      @include mq(768) {
+        width: 100%;
+      }
     }
     .deco-talline {
       width: 100%;
@@ -57,6 +74,17 @@
     margin-top: -480px;
     position: relative;
     z-index: 1;
+
+    @include mq(1280) {
+      gap: 100px;
+      padding: 0 1em;
+    }
+    @include mq(1024) {
+      display: flex;
+      flex-direction: column;
+      justify-items: center;
+      align-items: center;
+    }
     .l {
       display: flex;
       flex-direction: column;
@@ -103,6 +131,7 @@
 
       .mascot {
         width: 250px;
+
         img {
           width: 100%;
         }
@@ -120,6 +149,12 @@
         gap: 1em;
         svg {
           font-size: 2rem;
+        }
+        @include mq(420) {
+          font-size: 1rem;
+          svg {
+            font-size: 1.2rem;
+          }
         }
       }
       .vid {
@@ -140,9 +175,16 @@
           pointer-events: none;
           rotate: 290deg;
         }
+        @include mq(550) {
+          width: 100%;
+        }
         iframe {
           border: 2px solid white;
           min-width: 450px;
+          @include mq(550) {
+            min-width: auto;
+            width: 100%;
+          }
           width: 100%;
           aspect-ratio: 16/9;
         }
@@ -170,14 +212,36 @@
     grid-template-columns: 1fr 1.4fr;
     margin: 0 auto;
     transform: translateX(2%);
-
+    @include mq(768) {
+      transform: translateX(0);
+    }
     gap: 3em;
+
+    @include mq(1270) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     .l {
       position: relative;
 
       transform: translateY(150px);
       z-index: 20;
 
+      @include mq(1270) {
+        max-width: 500px;
+        transform: translateX(-50px);
+      }
+      @include mq(768) {
+        max-width: 300px;
+      }
+      @include mq(420) {
+        max-width: initial;
+        width: 70%;
+        height: 500px;
+        position: relative;
+        left: 5%;
+      }
       .side {
         position: absolute;
         left: -15px;
@@ -196,6 +260,11 @@
         user-select: none;
         pointer-events: none;
         left: -2px;
+
+        @include mq(768) {
+          width: 120px;
+          bottom: 0px;
+        }
       }
       .contacts {
         position: absolute;
@@ -213,7 +282,10 @@
           padding-right: 1.2em;
           clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
           transform-origin: left;
-
+          @include mq(420) {
+            width: 70px;
+            height: 80px;
+          }
           svg {
             width: 100%;
             color: #131313;
@@ -235,6 +307,9 @@
           letter-spacing: 4px;
           font-weight: 200;
           font-size: 2rem;
+          @include mq(600) {
+            font-size: 1.2rem;
+          }
         }
         margin-bottom: 0.5em;
         hr {
@@ -250,6 +325,9 @@
         background-size: cover;
         position: relative;
         box-shadow: 50px 0px 120px black inset;
+        @include mq(768) {
+          box-shadow: 0px 0px 50px black inset;
+        }
         .chain {
           user-select: none;
           pointer-events: none;
@@ -261,16 +339,28 @@
         .top {
           padding: 2em 5em;
           padding-bottom: 2em;
+
+          @include mq(768) {
+            padding: 1em 2em;
+          }
           .pp-head {
             display: grid;
             grid-template-columns: 1.5fr 1fr;
             gap: 3em;
             align-items: center;
             margin-bottom: 1em;
+            @include mq(600) {
+              display: flex;
+              flex-direction: column;
+            }
             .logo {
               width: 350px;
               height: 200px;
               object-fit: contain;
+              @include mq(550) {
+                width: 100%;
+                aspect-ratio: 7 / 4;
+              }
             }
             .gen {
               background: #141414;
@@ -282,9 +372,16 @@
               padding: 0.5em;
               padding-bottom: 1em;
               text-transform: uppercase;
+
+              @include mq(600) {
+                width: 100%;
+              }
               p {
                 font-size: 2.5rem;
                 filter: drop-shadow(0px 0px 11px #ffd072c7);
+                @include mq(600) {
+                  font-size: 1.5rem;
+                }
               }
               img {
                 filter: drop-shadow(0px 0px 11px #ffd072c7);
@@ -299,6 +396,11 @@
             padding: 0.5em 1em;
             line-height: 1.2;
             box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.644);
+            @include mq(550) {
+              min-width: unset;
+              width: 100%;
+              border: 1px solid white;
+            }
             p {
               font-size: 3rem;
               color: var(--gold);
@@ -317,10 +419,21 @@
           padding: 2em;
           gap: 2em;
           padding-top: 0;
+          @include mq(600) {
+            display: flex;
+            flex-direction: column-reverse;
+          }
+          @include mq(420) {
+            padding: 0.25em;
+          }
           .il {
             background: #131313;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            @include mq(420) {
+              display: flex;
+              flex-direction: column;
+            }
             gap: 2em;
             align-content: flex-start;
             border: 2px solid #75757591;
@@ -427,12 +540,17 @@
     border-top: 3px solid var(--gold);
     border-bottom: 3px solid var(--gold);
     padding-block: 2em;
+    position: relative;
+    z-index: 1;
     .top-btn {
       display: flex;
       justify-content: flex-end;
       padding: 1em;
       position: relative;
       z-index: 100;
+      @include mq(420) {
+        justify-content: center;
+      }
       .btn-sketch {
         display: flex;
         align-items: center;
@@ -449,7 +567,9 @@
       z-index: 1;
       transform-origin: left;
       rotate: -3deg;
-
+      @include mq(768) {
+        rotate: 0deg;
+      }
       &::before {
         content: "";
         position: absolute;
@@ -462,6 +582,12 @@
         background: url("/d/vid-stroke.png");
         background-size: 100% 100%;
         z-index: -1;
+
+        @include mq(550) {
+          height: 100%;
+          display: none;
+          top: 0%;
+        }
       }
       .h {
         filter: drop-shadow(0px 0px 10px #ffd072f3);
@@ -470,6 +596,15 @@
           font-size: 6rem;
           font-family: var(--fontA);
           font-weight: 300;
+          @include mq(768) {
+            font-size: 3rem;
+            text-align: center;
+          }
+        }
+        @include mq(768) {
+          img {
+            width: 100%;
+          }
         }
       }
       .l {
@@ -477,6 +612,14 @@
         grid-template-columns: 1fr 1fr 1fr;
         gap: 50px;
         padding: 2em 4em;
+        @include mq(1280) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        @include mq(420) {
+          padding: 1em 0;
+          justify-content: center;
+        }
         .video {
           // border: 2px solid white;
           iframe {
@@ -484,6 +627,11 @@
             filter: drop-shadow(0px 0px 10px #ffd072f3);
             width: 100%;
             aspect-ratio: 16/9;
+            @include mq(1280) {
+              max-width: 500px;
+            }
+            @include mq(420) {
+            }
           }
         }
       }

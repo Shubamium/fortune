@@ -230,6 +230,9 @@
         margin: 3em 0;
         background: url("/d/fctbg.png");
         background-repeat: no-repeat;
+        @include mq(420) {
+          justify-content: center;
+        }
         .btn-soc {
           width: 80px;
           height: 120px;
