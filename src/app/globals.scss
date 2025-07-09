@@ -72,6 +72,7 @@ h1,
 h2,
 h3 {
   font-family: var(--fontM);
+  color: white;
 }
 main {
   // min-height: 300vh;
@@ -84,10 +85,16 @@ main {
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: white;
 }
 
+p {
+  color: white;
+}
+label {
+  color: white;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

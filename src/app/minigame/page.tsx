@@ -22,6 +22,7 @@ export default function page({}: Props) {
   const [totalCount, setTotalCount] = useState(-1);
   const tcRef = useRef(totalCount);
   const lastSync = useRef(totalCount);
+  const audiRef = useRef<HTMLAudioElement>(null);
 
   const miniContRef = useRef<HTMLDivElement>(null);
   const addCount = () => {
@@ -65,15 +66,22 @@ export default function page({}: Props) {
       forEl.style.top = Math.floor(Math.random() * 90) + 0 + "%";
       forEl.style.rotate = Math.floor(Math.random() * 360) + "deg";
       forEl.style.scale = Math.random() * 1.1 + 0.8 + "";
-
+      if (!muted && audiRef.current) {
+        audiRef.current.play();
+      }
       setTimeout(() => {
         forEl.remove();
       }, 2000);
     }
   };
+  useEffect(() => {
+    if (!muted) {
+      audiRef.current?.play();
+    }
+  }, [muted]);
   return (
     <main id="minigame">
-      <audio src="/a/bgm.mp3" autoPlay loop muted={muted}></audio>
+      <audio src="/a/bgm.mp3" autoPlay loop muted={muted} ref={audiRef}></audio>
       <h2 className="finalCount">
         {totalCount === -1
           ? "Loading . . ."
