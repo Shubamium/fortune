@@ -1,3 +1,4 @@
+@use "mixins" as *;
 #p_about {
   // min-height: 8000px;
   position: relative;
@@ -8,6 +9,12 @@
     align-items: center;
     min-height: 1000px;
 
+    @include mq(768) {
+      display: flex;
+      flex-direction: column;
+      flex-direction: column-reverse;
+      min-height: auto;
+    }
     .deco-camp {
       position: absolute;
       left: 0%;
@@ -20,20 +27,45 @@
     .l {
       padding-left: 35%;
       filter: drop-shadow(0px 0px 13px #ffd072c2);
+
+      @include mq(1440) {
+        padding-left: 20%;
+      }
+
+      @include mq(768) {
+        padding-block: 200px;
+      }
+      @include mq(420) {
+        padding-left: 5%;
+      }
       h2 {
         font-size: 4rem;
         letter-spacing: 4px;
         margin-bottom: 0.5em;
+        @include mq(1280) {
+          font-size: 2rem;
+        }
       }
       p {
         font-size: 1.4rem;
         max-width: 80%;
         color: #898989;
+        @include mq(1280) {
+          font-size: 1.2rem;
+        }
+        @include mq(420) {
+          max-width: 95%;
+        }
       }
     }
     .r {
       clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
       height: 100%;
+
+      @include mq(768) {
+        clip-path: none;
+        margin-top: 2em;
+      }
       img {
         width: 100%;
         height: 100%;
@@ -51,12 +83,25 @@
     text-align: center;
     border: 3px solid;
     border-image: url("/d/sketchwhite.png") 3;
+    @include mq(768) {
+      padding: 1em 3em;
+    }
+    @include mq(420) {
+      padding: 0.5em 2em;
+    }
     p {
       font-size: 1.4rem;
       font-weight: 300;
       font-family: var(--fontA);
       color: #4c351a;
       text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.514);
+      @include mq(550) {
+        font-size: 1.2rem;
+      }
+      @include mq(420) {
+        font-size: 0.9rem;
+        text-align: left;
+      }
       strong {
         font-weight: bold;
       }
@@ -125,6 +170,10 @@
       z-index: -2;
       user-select: none;
       pointer-events: none;
+      @include mq(550) {
+        width: 400px;
+        height: 400px;
+      }
       @keyframes speen {
         from {
           rotate: 0deg;
@@ -150,6 +199,9 @@
       pointer-events: none;
       margin-bottom: 2em;
       animation: float 2s infinite alternate ease;
+      @include mq(550) {
+        max-width: 90%;
+      }
       @keyframes float {
         from {
           transform: translateY(-10px);
@@ -167,12 +219,18 @@
       font-weight: 200;
       letter-spacing: 4px;
       line-height: 1;
+      @include mq(550) {
+        font-size: 3rem;
+      }
     }
 
     .dash {
       margin: 0.5em;
       filter: drop-shadow(0px 0px 4px #ffd072fa);
       margin-bottom: 3em;
+      @include mq(550) {
+        max-width: 50%;
+      }
     }
     .crep {
       position: relative;
@@ -181,12 +239,18 @@
       h3 {
         color: var(--gold);
         letter-spacing: 2px;
+        @include mq(420) {
+          font-size: 1rem;
+        }
       }
       p {
         max-width: 470px;
         font-size: 1.2rem;
         margin: 1em;
         text-shadow: 0px 0px 1px black;
+        @include mq(420) {
+          font-size: 0.9rem;
+        }
       }
       svg {
         position: absolute;
@@ -205,18 +269,41 @@
     margin: 200px 0;
 
     box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.233);
+    @include mq(1280) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include mq(768) {
+      grid-template-columns: 1.4fr 1fr;
+    }
+    @include mq(550) {
+      display: flex;
+      flex-direction: column;
+    }
     .l {
       padding: 4em;
       background: url("/b/concrete2.png");
       background-size: 100% 100%;
+      padding-bottom: 150px;
+      @include mq(1440) {
+      }
+      @include mq(420) {
+        padding: 2em 1em;
+        padding-bottom: 150px;
+      }
       h2 {
         font-size: 3rem;
         // margin-bottom: 1em;
         text-shadow: 0px 0px 10px #ffd072f3;
+        @include mq(768) {
+          font-size: 1.7rem;
+        }
       }
       .dash {
         margin: 1em 0;
         filter: drop-shadow(0px 0px 4px #ffd072fa);
+        @include mq(768) {
+          max-width: 90%;
+        }
       }
       p {
         font-size: 1.4rem;
@@ -276,6 +363,23 @@
     mask-size: 100% 100%;
     align-items: center;
     position: relative;
+    @include mq(768) {
+      mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        white 5%,
+        white 80%,
+        transparent
+      );
+    }
+    @include mq(1600) {
+      grid-template-columns: 2fr 1fr;
+    }
+    @include mq(1024) {
+      display: flex;
+      flex-direction: column;
+      padding-top: 20px;
+    }
     .l {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -283,7 +387,22 @@
       padding-left: 10em;
       gap: 3em;
       margin-right: -100px;
-
+      @include mq(1600) {
+        padding-left: 50px;
+        padding-right: 150px;
+      }
+      @include mq(768) {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        z-index: 100;
+        background: #161616;
+      }
+      @include mq(550) {
+        padding: 0.5em;
+        gap: 1em;
+        margin: 0 auto;
+      }
       .ul {
         background: #100e0c;
 
@@ -304,6 +423,9 @@
           padding: 0.5em 1em;
           font-weight: bold;
           border-bottom: 2px solid white;
+          @include mq(420) {
+            font-size: 1rem;
+          }
           &:hover,
           &.selected {
             color: #100e0c;
@@ -313,21 +435,43 @@
         }
       }
       .md {
+        @include mq(550) {
+          padding: 1em;
+        }
+        @include mq(420) {
+          padding: 0.25em;
+        }
         &-h {
           display: grid;
           grid-template-columns: 1fr 100px;
           gap: 1em;
+          @include mq(550) {
+            display: flex;
+            flex-direction: column-reverse;
+          }
           .title {
             padding-top: 2em;
+            @include mq(550) {
+              padding: 0;
+            }
             h2 {
               font-size: 2.8rem;
               text-shadow: 0px 0px 10px #ffd072f3;
               color: var(--gold);
+              @include mq(550) {
+                font-size: 2rem;
+              }
             }
             p {
               font-size: 1.5rem;
               color: var(--gold);
               text-shadow: 0px 0px 10px #ffd072f3;
+              @include mq(550) {
+                font-size: 1.2rem;
+              }
+              @include mq(420) {
+                font-size: 1rem;
+              }
             }
           }
           .icon {
@@ -352,11 +496,20 @@
           text-shadow: 0px 0px 10px #ffd072f3;
           font-size: 1.4rem;
           min-height: 300px;
+          @include mq(550) {
+            font-size: 1.2rem;
+          }
+          @include mq(420) {
+            font-size: 1rem;
+          }
         }
         .md-ct {
           display: flex;
           gap: 2em;
           margin: 2em 0;
+          @include mq(768) {
+            flex-direction: column;
+          }
           .xl {
             background: var(--gold);
             color: #100e0c;
@@ -380,6 +533,29 @@
               color: #100e0c;
             }
           }
+
+          @include mq(768) {
+            .xl,
+            .mail {
+              display: flex;
+              justify-content: space-between;
+              padding: 0.25em 1em;
+            }
+          }
+          @include mq(420) {
+            .xl,
+            .mail {
+              display: flex;
+              flex-direction: column;
+              padding: 1em;
+              word-break: break-all;
+              svg {
+                width: 80px;
+                height: 30px;
+              }
+              font-size: 0.9rem;
+            }
+          }
         }
       }
     }
@@ -389,11 +565,17 @@
       min-height: 900px;
       // margin-left: -100px;
       position: relative;
+      @include mq(550) {
+        min-height: 400px;
+      }
       img {
         position: absolute;
         width: 100%;
         height: 100%;
         mask-image: url("/d/unitpfpmask.png");
+        @include mq(1024) {
+          mask-image: none;
+        }
         object-fit: cover;
         scale: 1.02;
         mask-size: 100% 100%;
@@ -409,6 +591,9 @@
 
     z-index: -1;
 
+    @include mq(1024) {
+      margin-top: 0px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -432,11 +617,19 @@
           filter: grayscale(50%);
         }
       }
+      @include mq(1024) {
+        background-position: 50% 80%;
+      }
     }
     display: flex;
     flex-direction: column;
     min-height: 1200px;
 
+    @include mq(768) {
+      min-height: 600px;
+      padding-top: 100px;
+      padding-bottom: 250px;
+    }
     justify-content: space-around;
     padding-top: 200px;
     .top {
@@ -448,6 +641,9 @@
       p {
         color: var(--gold);
         font-size: 2rem;
+        @include mq(768) {
+          font-size: 1.5rem;
+        }
       }
       h2 {
         font-size: 4rem;
@@ -458,6 +654,10 @@
         letter-spacing: 2px;
         line-height: 80%;
         font-weight: 300;
+
+        @include mq(768) {
+          font-size: 2.5rem;
+        }
       }
       img {
         max-width: 150px;
@@ -483,6 +683,15 @@
       font-family: var(--fontA);
       font-weight: 200;
       text-align: center;
+      @include mq(550) {
+        font-size: 4rem;
+      }
+      @include mq(420) {
+        font-size: 3rem;
+      }
+      @include mq(360) {
+        font-size: 2rem;
+      }
     }
     display: flex;
     align-items: center;
@@ -491,6 +700,9 @@
 
     .dash {
       filter: drop-shadow(0px 0px 10px #ffd072f3);
+      @include mq(550) {
+        max-width: 200px;
+      }
     }
     .plist {
       display: flex;
@@ -499,6 +711,9 @@
       align-items: center;
       img {
         max-height: 400px;
+        @include mq(1280) {
+          max-width: 100%;
+        }
         max-width: 800px;
       }
       // flex-wrap: wrap;
