@@ -419,7 +419,11 @@
         object-fit: contain;
         object-position: bottom;
       }
-
+      @include mq(1920, min) {
+        img {
+          left: 10%;
+        }
+      }
       @include mq(768) {
         height: 800px;
         margin-bottom: -150px;
