@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 #minigame {
   background: url("/b/crimson-wall.png");
   min-height: 0;
@@ -19,6 +21,12 @@
     line-height: 1;
     font-weight: 800;
 
+    @include mq(1280) {
+      font-size: 5rem;
+    }
+    @include mq(550) {
+      font-size: 3.5rem;
+    }
     animation: swing 0.4s infinite ease-in-out alternate;
     @keyframes swing {
       from {
@@ -37,6 +45,12 @@
     font-family: var(--fontA);
     filter: drop-shadow(0px 0px 2px black);
     font-weight: 800;
+    @include mq(1280) {
+      font-size: 3.5rem;
+    }
+    @include mq(550) {
+      font-size: 3rem;
+    }
   }
   .control {
     position: relative;
@@ -44,6 +58,12 @@
       width: 500px;
       filter: drop-shadow(0px 0px 14px black);
       user-select: none;
+      @include mq(1280) {
+        width: 300px;
+      }
+      @include mq(420) {
+        width: 240px;
+      }
       img {
         user-select: none;
       }
@@ -58,6 +78,13 @@
       font-size: 1.2rem;
       user-select: none;
       rotate: 20deg;
+      @include mq(550) {
+        font-size: 0.8rem;
+        left: 90%;
+      }
+      @include mq(420) {
+        left: 50%;
+      }
     }
   }
 
@@ -66,6 +93,12 @@
 
     bottom: 40px;
     left: 40px;
+    @include mq(1280) {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
 
     &.muted {
       filter: brightness(0.5) grayscale(1);
@@ -83,10 +116,16 @@
     img {
       position: absolute;
       height: 300px;
-
       animation: swing 0.5s infinite steps(2) alternate;
-
       width: 300px;
+      @include mq(1280) {
+        width: 220px;
+        height: 220px;
+      }
+      @include mq(550) {
+        width: 150px;
+        height: 150px;
+      }
     }
   }
 }

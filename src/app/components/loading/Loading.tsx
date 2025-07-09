@@ -8,11 +8,11 @@ export default function Loading({}: Props) {
   const [remove, setRemove] = useState(false);
   useEffect(() => {
     setTimeout(() => {
-      setL(true);
+      // setL(true);
     }, 3000);
 
     setTimeout(() => {
-      setRemove(true);
+      // setRemove(true);
     }, 4500);
   }, []);
 

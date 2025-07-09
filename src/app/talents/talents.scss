@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 #p_tal {
   // margin-top: 300px;
   padding-top: 300px;
@@ -5,12 +7,6 @@
     display: flex;
     .l {
       position: relative;
-      .infitext {
-        top: -20%;
-        z-index: -50;
-      }
-      position: relative;
-      z-index: 1;
       .frag {
         position: absolute;
         top: 0%;
@@ -20,13 +16,23 @@
         scale: 1.8;
         z-index: -2;
         padding-right: 100px;
+        @include mq(1024) {
+          width: 140%;
+          height: auto;
+        }
+        @include mq(768) {
+          width: 350px;
+        }
       }
       h2 {
         padding-left: 0.5em;
         font-size: 5rem;
         letter-spacing: 5px;
-        position: relative;
         font-weight: 400;
+
+        @include mq(1024) {
+          font-size: 3rem;
+        }
         color: #100e0c;
       }
     }
@@ -45,6 +51,9 @@
         font-family: var(--fontA);
         font-size: 4rem;
         text-transform: uppercase;
+        @include mq(620) {
+          font-size: 2rem;
+        }
       }
       img {
         width: 300px;
@@ -58,6 +67,18 @@
       margin: 0 auto;
       flex-wrap: wrap;
       max-width: 1920px;
+    }
+    .tc {
+      @include mq(1280) {
+        scale: 0.9;
+        transform-origin: top;
+        margin-bottom: -50px;
+      }
+      @include mq(768) {
+        scale: 0.4;
+        margin-bottom: -200px;
+        margin-inline: -100px;
+      }
     }
   }
 }

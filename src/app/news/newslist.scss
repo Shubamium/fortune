@@ -151,6 +151,12 @@
       font-size: 2rem;
       color: white;
       filter: drop-shadow(0px 0px 10px #ffd072f3);
+      @include mq(720) {
+        font-size: 1.2rem;
+      }
+      @include mq(550) {
+        font-size: 1rem;
+      }
     }
     .chain {
       position: absolute;

@@ -281,6 +281,9 @@ main {
   transform-origin: left;
   p {
     font-size: 10rem;
+    @include mq(768) {
+      font-size: 6rem;
+    }
     font-weight: bold;
     color: transparent;
     text-shadow: 0px 0px 10px black;

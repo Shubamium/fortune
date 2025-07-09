@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 #p_con {
   padding-top: 200px;
   min-height: 0;
@@ -19,6 +21,10 @@
       grid-template-columns: 1fr 1.4fr;
       gap: 100px;
       align-items: center;
+      @include mq(1280) {
+        display: flex;
+        flex-direction: column;
+      }
       .info {
         display: flex;
         flex-direction: column;
@@ -37,6 +43,16 @@
             font-weight: 400;
             letter-spacing: 2px;
           }
+          @include mq(420) {
+            font-size: 1rem;
+            h2 {
+              font-size: 2rem;
+            }
+            padding-inline: 2em;
+          }
+          p {
+            font-size: 0.7rem;
+          }
         }
 
         .other {
@@ -45,6 +61,9 @@
             font-family: var(--fontA);
             margin: 0.25em;
             font-weight: 200;
+            @include mq(420) {
+              font-size: 1rem;
+            }
           }
           margin: 2em 0;
           .ct {
@@ -53,6 +72,7 @@
             flex-wrap: wrap;
             justify-content: center;
             filter: drop-shadow(0px 0px 10px #ffd07296);
+
             a {
               background: var(--gold);
               color: #161616;
@@ -60,6 +80,10 @@
               display: flex;
               align-items: center;
               gap: 5em;
+              @include mq(420) {
+                width: 100%;
+                justify-content: space-between;
+              }
             }
           }
         }
@@ -76,7 +100,10 @@
         gap: 1em;
 
         position: relative;
-
+        @include mq(420) {
+          gap: 0.5em;
+          width: 100%;
+        }
         .icon {
           position: absolute;
           // top: 100%;
@@ -91,6 +118,10 @@
           display: grid;
           grid-template-columns: 1fr 1fr;
           gap: 1em;
+          @include mq(620) {
+            display: flex;
+            flex-direction: column;
+          }
         }
         .f {
           display: flex;
@@ -111,6 +142,10 @@
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.712);
             &::placeholder {
               opacity: 0.4;
+            }
+
+            @include mq(420) {
+              font-size: 1rem;
             }
           }
           textarea {
