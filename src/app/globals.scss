@@ -27,6 +27,7 @@ body:has(#loading) {
 body:has(#loading.hide) {
   overflow: initial;
   overflow-x: clip;
+  color: white;
   main {
     opacity: 1;
   }
