@@ -27,7 +27,6 @@ const url = "https://fortunevstudios.com";
 
 export const metadata: Metadata = {
   title: title,
-
   metadataBase: new URL(url),
   keywords:
     "VTuber, Content, Music, Media, Agency, Idol, Audition, Corpo, Artist, News"
