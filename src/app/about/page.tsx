@@ -109,7 +109,13 @@ export default async function page({}: Props) {
           <h2>THE NEXT GENERATION OF VTUBERS.</h2>
         </div>
         <div className="bottom">
-          <button className="btn btn-sketch">Apply Now</button>
+          <a
+            href="https://forms.gle/6MTBmnrGXPGTArat7"
+            target="_blank"
+            className="btn btn-sketch"
+          >
+            Apply Now
+          </a>
         </div>
       </section>
 

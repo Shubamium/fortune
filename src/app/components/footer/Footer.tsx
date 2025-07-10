@@ -52,15 +52,27 @@ export default async function Footer({}: Props) {
               </div>
             </div>
             <div className="socials">
-              <a href="#" className="btn btn-soc">
+              <a
+                href="https://discord.com/invite/hKP6hWG4W8"
+                target="_blank"
+                className="btn btn-soc"
+              >
                 <FaDiscord />
                 <img src="/d/ctbg.png" alt="" className="bg" />
               </a>
-              <a href="#" className="btn btn-soc">
+              <a
+                target="_blank"
+                href="https://www.youtube.com/channel/UCITO-p2fDxC-ZAKQWjJHkIQ"
+                className="btn btn-soc"
+              >
                 <img src="/d/ctbg.png" alt="" className="bg" />
                 <FaYoutube />
               </a>
-              <a href="#" className="btn btn-soc">
+              <a
+                href="https://forms.gle/6MTBmnrGXPGTArat7"
+                target="_blank"
+                className="btn btn-soc"
+              >
                 <img src="/d/ctbg.png" alt="" className="bg" />
                 <FaXTwitter />
               </a>
