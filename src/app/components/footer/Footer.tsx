@@ -28,9 +28,11 @@ export default async function Footer({}: Props) {
         </div>
         <div className="r">
           <img src="/b/ftbgr.png" alt="" className="ftbgr" />
+          <img src="/d/foc.png" alt="" className="foc" />
           <div className="c">
             <div className="navigation">
               <h2>NAVIGATION</h2>
+              <img src="/d/dash2.png" alt="" className="dash" />
               <div className="nav-links">
                 <TLink href="/" className="btn btn-fnav">
                   HOME

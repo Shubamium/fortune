@@ -34,6 +34,14 @@
       z-index: 100;
     }
   }
+  .ftbgt {
+    position: absolute;
+    right: -1%;
+    bottom: 0%;
+    height: 100%;
+    // scale: 1. 1;
+    display: none;
+  }
   .r {
     width: 40%;
     display: grid;
@@ -46,6 +54,12 @@
     filter: drop-shadow(0px 0px 20px #ffd07252);
     position: relative;
 
+    .foc {
+      position: absolute;
+      right: 0%;
+      bottom: calc(100% - 90px);
+      height: 240px;
+    }
     @include mq(620) {
       display: flex;
       flex-direction: column;
@@ -55,7 +69,7 @@
       width: 50%;
     }
     @include mq(1440) {
-      width: 60%;
+      width: 50%;
     }
     @include mq(1280) {
       width: 90%;
@@ -83,6 +97,9 @@
       pointer-events: none;
       height: 100%;
 
+      @include mq(2000, min) {
+        right: -20%;
+      }
       @include mq(1700) {
         right: -45%;
       }
@@ -96,12 +113,6 @@
         right: -40%;
       }
 
-      @include mq(2400, min) {
-        right: -1%;
-        scale: 1.3 1;
-        transform: skewX(-15deg);
-        transform-origin: right;
-      }
       @include mq(2550, min) {
         right: -41%;
         scale: 1.3 1;
@@ -118,7 +129,11 @@
         left: 0%;
         scale: 1.5 1;
       }
+
+      .navigation {
+      }
     }
+
     .a {
       height: 100%;
       // background: red;
@@ -179,6 +194,12 @@
           font-size: 1.5rem;
           text-align: center;
         }
+      }
+      .dash {
+        scale: -1;
+        max-width: 60%;
+        margin-bottom: 1em;
+        filter: drop-shadow(0px 0px 10px #ffd072d2);
       }
       .nav-links {
         display: grid;
