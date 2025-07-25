@@ -154,13 +154,14 @@
       }
     }
     .btn-fnav {
-      font-size: clamp(3rem, 8vw, 5rem);
-      font-family: var(--fontM);
+      font-size: clamp(2rem, 8vw, 5rem);
+      font-family: var(--fontA);
       transform-origin: right;
 
       text-shadow: 0px 0px 10px white;
       width: 100%;
       text-align: center;
+      line-height: 1;
       mask-image: linear-gradient(to right, transparent, white, transparent);
       transition: all 100ms ease;
       padding-top: 0.15em;

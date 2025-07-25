@@ -6,6 +6,12 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Loading from "./components/loading/Loading";
 
+import localFont from "next/font/local";
+const gow = localFont({
+  src: "./fonts/GODOFWAR.ttf",
+  weight: "400",
+});
+
 const antiqua = Modern_Antiqua({
   weight: ["400"],
   subsets: ["latin"],
@@ -59,7 +65,7 @@ export default function RootLayout({
         style={
           {
             "--fontM": antiqua.style.fontFamily,
-            "--fontA": spectral.style.fontFamily,
+            "--fontA": gow.style.fontFamily,
           } as CSSProperties
         }
       >

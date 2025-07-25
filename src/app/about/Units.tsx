@@ -18,7 +18,7 @@ export default function Units({ ul }: Props) {
     <section id="units">
       <div className="l">
         <div className="ul">
-          <h2>OUR UNIT</h2>
+          <h2>TEAM</h2>
           {ul.map((u: any, i: number) => {
             return (
               <button

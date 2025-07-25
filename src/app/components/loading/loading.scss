@@ -139,6 +139,7 @@
     font-weight: bold;
     filter: drop-shadow(0px 0px 14px #ffd07270);
     animation: hover 1s infinite alternate ease-in-out;
+    font-family: var(--fontA);
     @include mq(768) {
       font-size: 2rem;
     }
