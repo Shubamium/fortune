@@ -28,7 +28,7 @@ const title = "Fortune VStudios";
 const description =
   "Fortune VStudios is a US based Multimedia Studio that specialises in the entertainment industry focusing primarily on Creative Content, Music, & Gaming. Through the medium of VTubing.";
 const banner =
-  "https://shubastore.caprover.venmi.art/api/public/dl/ZwxdYXQv?inline=true";
+  "https://shubastore.venmiart.com/api/public/dl/ZwxdYXQv?inline=true";
 const url = "https://fortunevstudios.com";
 
 export const metadata: Metadata = {
